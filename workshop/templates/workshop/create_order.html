@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Order</title>
+</head>
+<body>
+    <h1>Create Order</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" id="client_id" name="client_id" value="{{ client_id }}">
+        <label for="car_model">Car Model:</label><br>
+        <input type="text" id="car_model" name="car_model"><br><br>
+        <label for="service">Choose a service:</label><br>
+        <select id="service" name="service">
+            {% for service in services %}
+            <option value="{{ service.id }}">{{ service.name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="master">Choose a master:</label><br>
+        <select id="master" name="master">
+            {% for master in masters %}
+            <option value="{{ master.id }}">{{ master.full_name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if order %}
+    <h2>Order Confirmation</h2>
+    <p>Car Model: {{ order.car_model }}</p>
+    <p>Service: {{ order.service.name }}</p>
+    <p>Master: {{ order.master.full_name }}</p>
+    <p>Total Price: ${{ order.total_price }}</p>
+    {% endif %}
+</body>
+</html>

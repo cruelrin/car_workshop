@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Master List</title>
+</head>
+<body>
+    <h1>Master List</h1>
+    <ul>
+        {% for master in masters %}
+        <li>{{ master.full_name }} - {{ master.position }} - Experience: {{ master.experience }} years</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
