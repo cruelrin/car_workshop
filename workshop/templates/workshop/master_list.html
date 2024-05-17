@@ -11,7 +11,7 @@
             background: #f4f4f4;
             margin: 0;
         }
-        
+
         h1 {
             font-weight: bold;
         }
@@ -30,8 +30,8 @@
         }
 
         .card-columns-custom .col-xl-4 {
-            flex: 1 0 30%; 
-            max-width: 30%; 
+            flex: 1 0 30%;
+            max-width: 30%;
             margin-bottom: 1.5rem;
         }
 
@@ -88,6 +88,14 @@
                 </div>
             </div>
             <!-- End Banner -->
+
+            {% if selected_service %}
+            <div class="alert alert-info mt-4">
+                <h4>Вы выбрали услугу: {{ selected_service.name }}</h4>
+                <p>{{ selected_service.description }}</p>
+                <p class="font-weight-bold">Цена: {{ selected_service.price }} сом</p>
+            </div>
+            {% endif %}
 
             <!-- Master List -->
             <ul class="gallery-menu">

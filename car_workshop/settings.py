@@ -58,7 +58,7 @@ ROOT_URLCONF = "car_workshop.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [ BASE_DIR / "car_workshop/workshop/templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
