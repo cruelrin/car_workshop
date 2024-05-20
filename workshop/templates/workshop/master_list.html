@@ -105,7 +105,9 @@
                     <div class="bg-white rounded shadow-sm">
                         <img src="{{ master.photo.url }}" alt="{{ master.full_name }}" class="img-fluid">
                         <div class="p-4">
-                            <h5><a href="#" class="text-dark">{{ master.full_name }}</a></h5>
+                            <h5>
+                                <a href="{% url 'create_order' %}?master_id={{ master.id }}&service_id={{ selected_service.id }}" class="text-dark">{{ master.full_name }}</a>
+                            </h5>
                             <p class="small text-muted mb-0">{{ master.position }}</p>
                             <p class="font-weight-bold">Опыт: {{ master.experience }} лет</p>
                             <p class="font-weight-bold">Услуга: {{ master.price }} сом в час</p>
