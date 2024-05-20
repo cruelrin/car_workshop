@@ -13,6 +13,8 @@ class Master(models.Model):
     full_name = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
     experience = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    photo = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return self.full_name
