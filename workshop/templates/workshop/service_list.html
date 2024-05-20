@@ -94,19 +94,20 @@
             <ul class="gallery-menu">
                 {% for service in services %}
                 <li>
-                    <a href="{% url 'master_list_with_service' service.id %}">
-                        <div class="bg-white rounded shadow-sm">
-                            <img src="{{ service.photo.url }}" alt="{{ service.name }}" class="img-fluid">
-                            <div class="p-4">
-                                <h5><a href="#" class="text-dark">{{ service.name }}</a></h5>
-                                <p class="small text-muted mb-0">{{ service.description }}</p>
-                                <p class="font-weight-bold">Цена: {{ service.price }} сом</p>
-                            </div>
+                    <div class="bg-white rounded shadow-sm">
+                        <img src="{{ service.photo.url }}" alt="{{ service.name }}" class="img-fluid">
+                        <div class="p-4">
+                            <h5>
+                                <a href="{% url 'master_list_with_service' service.id %}" class="text-dark">{{ service.name }}</a>
+                            </h5>
+                            <p class="small text-muted mb-0">{{ service.description }}</p>
+                            <p class="font-weight-bold">Цена: {{ service.price }} сом</p>
                         </div>
-                    </a>
+                    </div>
                 </li>
                 {% endfor %}
             </ul>
+            
         </div>
     </div>
 

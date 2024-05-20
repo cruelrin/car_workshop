@@ -44,46 +44,6 @@
             margin-top: 20px;
         }
 
-        .card-columns-custom {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .card-columns-custom .col-xl-4 {
-            flex: 1 0 30%;
-            max-width: 30%;
-            margin-bottom: 1.5rem;
-        }
-
-        .card {
-            margin-bottom: 1.5rem;
-        }
-
-        .text-white.p-5 {
-            padding: 0;
-        }
-
-        .gallery-menu {
-            list-style: none;
-            padding: 0;
-            margin: 30px 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .gallery-menu li {
-            width: 30%;
-            margin-bottom: 20px;
-        }
-
-        .gallery-menu img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
         footer {
             background-color: #525785;
             color: white;
@@ -114,7 +74,8 @@
                 <p>Услуга: {{ order.service.name }}</p>
                 <p>Мастер: {{ order.master.full_name }}</p>
                 <p>Часы работы: {{ order.hours_worked }}</p>
-                <p>Цена за час: {{ order.master.price }} сом</p>
+                <p>Цена за час: {{ order.hourly_rate }} сом</p>
+                <p>Стоимость услуги: {{ order.service_cost }} сом</p>
                 <p>Общая стоимость: {{ order.total_price }} сом</p>
 
                 <a href="{% url 'service_list' %}" class="btn btn-primary">Назад к списку услуг</a>
